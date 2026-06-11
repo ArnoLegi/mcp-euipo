@@ -28,11 +28,11 @@ except ImportError:  # python-dotenv non installé : on lit l'environnement tel 
 log = logging.getLogger("mcp_euipo.auth")
 
 # --- Configuration OAuth / API ---------------------------------------------- #
-TOKEN_URL = "https://euipo.europa.eu/cas-server-webapp/oidc/accessToken"
+TOKEN_URL = "https://sandbox.euipo.europa.eu/cas-server-webapp/oidc/accessToken"
 SCOPE = "uid"
 
-TRADEMARK_BASE = "https://api.euipo.europa.eu/trademark-search"
-GOODS_SERVICES_BASE = "https://api.euipo.europa.eu/goods-and-services"
+TRADEMARK_BASE = "https://api-sandbox.euipo.europa.eu/trademark-search"
+GOODS_SERVICES_BASE = "https://api-sandbox.euipo.europa.eu/goods-and-services"
 
 
 def _clean(name: str) -> str:
