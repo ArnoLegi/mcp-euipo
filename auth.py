@@ -28,11 +28,18 @@ except ImportError:  # python-dotenv non installé : on lit l'environnement tel 
 log = logging.getLogger("mcp_euipo.auth")
 
 # --- Configuration OAuth / API ---------------------------------------------- #
-TOKEN_URL = "https://sandbox.euipo.europa.eu/cas-server-webapp/oidc/accessToken"
-SCOPE = "uid"
+# Production (actif). Pour basculer en sandbox, commenter ces 3 lignes et
+# décommenter le bloc sandbox ci-dessous.
+TOKEN_URL = "https://euipo.europa.eu/cas-server-webapp/oidc/accessToken"
+TRADEMARK_BASE = "https://api.euipo.europa.eu/trademark-search"
+GOODS_SERVICES_BASE = "https://api.euipo.europa.eu/goods-and-services"
 
-TRADEMARK_BASE = "https://api-sandbox.euipo.europa.eu/trademark-search"
-GOODS_SERVICES_BASE = "https://api-sandbox.euipo.europa.eu/goods-and-services"
+# Sandbox (en attente de validation des endpoints).
+# TOKEN_URL = "https://auth-sandbox.euipo.europa.eu/cas-server-webapp/oidc/accessToken"
+# TRADEMARK_BASE = "https://api-sandbox.euipo.europa.eu/trademark-search"
+# GOODS_SERVICES_BASE = "https://api-sandbox.euipo.europa.eu/goods-and-services"
+
+SCOPE = "uid"
 
 
 def _clean(name: str) -> str:
